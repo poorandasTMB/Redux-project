@@ -192,13 +192,13 @@ td:first-child{
 // Plan Css Code
 .plan{
   display: grid;
-  grid-template-columns: 15% 1fr;
+  grid-template-columns: 16% 1fr;
   flex-direction: row;
   gap: 30px;
 }
 input[type="radio"]{
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
   cursor: pointer;
 }
 
