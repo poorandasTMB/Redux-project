@@ -24,6 +24,12 @@ let inputGroupList = [
                 type: "email",
                 label: "Email",
                 placeholder: "Enter your email"
+            },
+            {
+                name: 'PhoneNumber',
+                type: "number",
+                label: "Number",
+                placeholder: "Enter your number"
             }
         ]
     },
@@ -39,6 +45,13 @@ let inputGroupList = [
                 label: "Name123456",
                 placeholder: "Enter your name"
             },
+            {
+                name: 'email2ssd',
+                type: "email",
+                label: "Emailwee567",
+                placeholder: "Enter your email"
+            }
+            ,
             {
                 name: 'email2ssd',
                 type: "email",
@@ -86,17 +99,34 @@ export default function Formwrapper() {
                     <>
                         <Header headData={inputGroupList[formData.formStep - 1].headData} />
                         <form onSubmit={handlesubmit}>
-                            {inputGroupList[formData.formStep - 1].inputGroup.map((item,index) => {
-                                return <Inputcontroler inputData={item} key={index}/>
+                            {inputGroupList[formData.formStep - 1].inputGroup.map((item, index) => {
+                                console.log(inputGroupList, formData.formStep - 1)
+                                return <Inputcontroler inputData={item} key={index} />
                             })}
                         </form>
                     </>
                     :
                     <>
+                        <table>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone number</th>
+                            </tr>
+                            <tr>
+                                <td>{formData?.name}</td>
+                                <td> {formData?.email}</td>
+                                <td> {formData?.PhoneNumber}</td>
+                                
+                            </tr>
+                        
+                        </table>
+{/* 
+
                         Name : {formData?.name}<br></br>
                         Email : {formData?.email}<br></br>
                         step : {formData?.step}<br></br>
-                        email2 : {formData?.email2}<br></br>
+                        email2 : {formData?.email2}<br></br> */}
                     </>
             }
             <div className='form_btn'>

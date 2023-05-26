@@ -130,6 +130,7 @@ form{
   font-weight: 600;
   color: #fff;
   padding: 15px 43px;
+  cursor: pointer;
   
 }
 
@@ -161,3 +162,18 @@ form{
   margin-bottom: 40px;
 }
 
+
+// Summary Css Code
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background-color: #f2f2f2;
+}
