@@ -42,6 +42,9 @@ li{
 .aside_bar{
   background: #493EFF;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .info_number{ 
   padding: 12px 17px;
@@ -90,6 +93,9 @@ img{
 
 // Form Header
 
+.form_header{
+  margin-bottom: 40px;
+}
 .form_heading{
   font-size: 48px;
   font-weight: 700;
@@ -176,4 +182,20 @@ th, td {
 }
 th {
   background-color: #f2f2f2;
+}
+
+// Plan Css Code
+
+// .plan{
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: space-between;
+//   &label{
+//     margin-bottom: 0;
+//   }
+// }
+
+input[type="radio"]{
+  height: 30px;
+  width: 30px;
 }

@@ -1,21 +1,20 @@
 import { useSelector, useDispatch } from 'react-redux';
-// import { update } from '../../store/formSlice';
 import { update } from '../redux/formSlice';
 
-export default function Inputcontroler({inputData: { id, name, type, label, placeholder } }) {
+export default function Inputcontroler({ inputData: { id, name, type, label, placeholder, readonly = false, value } }) {
     const dispatch = useDispatch();
     const formData = useSelector((state) => state.formReduxData);
-
     let inputTypes;
 
-  switch (type) {
-    case 'radio':
-        inputTypes = <input required id={id} name={name} placeholder={placeholder} type={type} value={label} checked={formData[name] === label} onChange={(e) => { dispatch(update({ name: e.target.name, value: e.target.value })) }} />
-      break;
-    default:
-        inputTypes = <input required id={id} name={name} placeholder={placeholder} type={type} value={formData[name] || ""} onChange={(e) => { dispatch(update({ name: e.target.name, value: e.target.value })) }} />
-      break;
-  }
+    switch (type) {
+        case 'radio':
+            inputTypes = <input required id={id} name={name} placeholder={placeholder} type={type} value={value} checked={formData[name] === value}  onChange={(e) => { dispatch(update({ name: e.target.name, value: e.target.value })) }} />
+            break;
+
+        default:
+            inputTypes = <input readOnly={readonly} required id={id} name={name} placeholder={placeholder} type={type} value={formData[name] || ""}  onChange={(e) => { dispatch(update({ name: e.target.name, value: e.target.value })) }} />
+            break;
+    }
 
     return (
         <>

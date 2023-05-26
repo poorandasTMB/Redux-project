@@ -1,9 +1,12 @@
+
 // Import Header
 import Header from "./formheader";
 import Inputcontroler from './inputcontroler';
 import { useDispatch, useSelector } from 'react-redux';
 import { update } from '../redux/formSlice';
 
+
+// Object Data 
 let inputGroupList = [
     {
         headData: {
@@ -36,24 +39,28 @@ let inputGroupList = [
             heading: "Select plan",
             info: "Please select plan"
         },
+
         inputGroup: [
             {
+                id: "basic",
+                name: 'plan',
+                type: "radio",
+                label: "Basic",
+                value: "basic"
+            },
+            {
                 id: "standard",
-                name: 'radio',
+                name: 'plan',
                 type: "radio",
-                label: "standard",
+                label: "Standard",
+                value: "standard"
             },
             {
-                id: "medium",
-                name: 'radio',
+                id: "plus",
+                name: 'plan',
                 type: "radio",
-                label: "Medium",
-            },
-            {
-                id: "high",
-                name: 'radio',
-                type: "radio",
-                label: "High",
+                label: "Plus",
+                value: "plus"
             }
         ]
     },
@@ -64,16 +71,32 @@ let inputGroupList = [
         },
         inputGroup: [
             {
-                name: 'aasdsasd',
-                type: "text",
-                label: "Namesada123456",
-                placeholder: "Enter your name"
+                id: "month1",
+                name: 'quantity',
+                type: "radio",
+                label: "1 month",
+                value: "1"
             },
             {
-                name: 'asdasdasd',
-                type: "email",
-                label: "Emailwee567",
-                placeholder: "Enter your email"
+                id: "month6",
+                name: 'quantity',
+                type: "radio",
+                label: "6 month",
+                value: "6"
+            },
+            {
+                id: "month12",
+                name: 'quantity',
+                type: "radio",
+                label: "12 month",
+                value: "12"
+            },
+            {
+                id: "price",
+                name: 'price',
+                type: "input",
+                label: "Price",
+                readonly: true
             }
         ]
     }
@@ -102,16 +125,22 @@ export default function Formwrapper() {
                     </>
                     :
                     <>
+                        <div className="form_header">
+                            <h2 className="form_heading">Summary</h2>
+                        </div>
                         <table>
-                            {Object.entries(formData).map((item) => {
-                                if (item[0] === "formStep") return ""
-                                return (
-                                    <tr>
-                                        <td>{item[0]}</td>
-                                        <td>{item[1]}</td>
-                                    </tr>
-                                )
-                            })}
+                            <tbody>
+                                {Object.entries(formData).map((item, index) => {
+                                    if (item[0] === "formStep") return ""
+                                    return (
+
+                                        <tr key={index}>
+                                            <td>{item[0]}</td>
+                                            <td>{item[1]}</td>
+                                        </tr>
+                                    )
+                                })}
+                            </tbody>
                         </table>
                     </>
             }
