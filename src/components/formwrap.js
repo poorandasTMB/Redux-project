@@ -27,7 +27,7 @@ let inputGroupList = [
                 placeholder: "Enter your email"
             },
             {
-                name: 'PhoneNumber',
+                name: 'Phone number',
                 type: "number",
                 label: "Number",
                 placeholder: "Enter your number"
