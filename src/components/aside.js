@@ -28,20 +28,17 @@ export default function Aside() {
                         {steps.map((item, index) => {
                             return (
                                 // Item Data
-
                                 <li key={index}>
                                     <span className={`info_number ${formData.formStep === index + 1 ? "active" : ""}`}>{item.number}</span>
                                     <div>
                                         <span className="info_step">{item.step}</span>
                                         <span className="info">{item.info}</span>
                                     </div>
-
                                 </li>
                             )
                         })}
                     </ul>
                 </div>
-
                 <img src="aside.svg" alt="" />
             </div>
         </>

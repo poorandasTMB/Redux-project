@@ -15,10 +15,10 @@ const formSlice = createSlice({
     initialState,
     reducers: {
         update(state, action) {
-            if (action.payload.name === "plan" && state?.quantity) {
-                state.price = plans[action.payload.value] * state?.quantity
+            if (action.payload.name === "plan" && state?.month) {
+                state.price = plans[action.payload.value] * state?.month
             }
-            if (action.payload.name === "quantity" && state?.plan) {
+            if (action.payload.name === "month" && state?.plan) {
                 state.price = plans[state.plan] * action.payload.value
             }
             state[action.payload.name] = action.payload.value;

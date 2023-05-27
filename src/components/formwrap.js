@@ -1,4 +1,3 @@
-
 // Import Header
 import Header from "./formheader";
 import Inputcontroler from './inputcontroler';
@@ -72,21 +71,21 @@ let inputGroupList = [
         inputGroup: [
             {
                 id: "month1",
-                name: 'quantity',
+                name: 'month',
                 type: "radio",
                 label: "1 month",
                 value: "1"
             },
             {
                 id: "month6",
-                name: 'quantity',
+                name: 'month',
                 type: "radio",
                 label: "6 month",
                 value: "6"
             },
             {
                 id: "month12",
-                name: 'quantity',
+                name: 'month',
                 type: "radio",
                 label: "12 month",
                 value: "12"
@@ -100,10 +99,7 @@ let inputGroupList = [
             }
         ]
     }
-
 ]
-
-
 
 export default function Formwrapper() {
     const dispatch = useDispatch();

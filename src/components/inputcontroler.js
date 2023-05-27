@@ -18,7 +18,7 @@ export default function Inputcontroler({ inputData: { id, name, type, label, pla
 
     return (
         <>
-            <div className={`input_box ${name=="plan" ||name=="quantity"?"plan":""}`}>
+            <div className={`input_box ${name==="plan" ||name==="month"?"plan":""}`}>
                 <label htmlFor={id}>{label}</label>
                 {inputTypes}
             </div>
